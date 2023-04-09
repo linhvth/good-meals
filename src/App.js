@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Test the initial setup for Meal Plan Website project from the course ENG 301.
         </p>
         <a
           className="App-link"
