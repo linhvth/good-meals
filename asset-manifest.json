@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/meal-plan/static/css/main.073c9b0a.css",
-    "main.js": "/meal-plan/static/js/main.8add119a.js",
+    "main.js": "/meal-plan/static/js/main.4a434608.js",
     "static/js/787.97af3e39.chunk.js": "/meal-plan/static/js/787.97af3e39.chunk.js",
     "static/media/logo.svg": "/meal-plan/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/meal-plan/index.html",
     "main.073c9b0a.css.map": "/meal-plan/static/css/main.073c9b0a.css.map",
-    "main.8add119a.js.map": "/meal-plan/static/js/main.8add119a.js.map",
+    "main.4a434608.js.map": "/meal-plan/static/js/main.4a434608.js.map",
     "787.97af3e39.chunk.js.map": "/meal-plan/static/js/787.97af3e39.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.8add119a.js"
+    "static/js/main.4a434608.js"
   ]
 }
