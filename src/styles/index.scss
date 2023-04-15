@@ -1,0 +1,19 @@
+@import './bootstrap-override.scss';
+@import 'bootstrap/scss/bootstrap.scss';
+
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.horizontal-center {
+  margin: 0;
+  position: absolute;
+  right: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}

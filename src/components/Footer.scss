@@ -1,0 +1,25 @@
+@import '../styles/bootstrap-override.scss';
+
+#footer {
+    background-color: $primary;
+    height: 340px;
+}
+
+#footer #footer-item h6 {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+}
+#footer #footer-item .footer-item{
+   font-size: 14px !important;
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: $secondary !important;
+}
+
+#footer-bot {
+    font-size: 14px;
+}

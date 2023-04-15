@@ -1,0 +1,47 @@
+@import '../styles/bootstrap-override.scss';
+
+.justify-content-between {
+    width: 100% !important;
+}
+
+Nav {
+    background-color: $primary;
+    flex-flow: column;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 40px;
+    color: $secondary !important;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    color: $secondary !important;
+}
+
+.nav-link { color: white !important }
+
+.nav-link:hover {color: $secondary !important;}
+
+.active {
+    color: $secondary !important;
+    font-weight: bold;
+    border-bottom: 3px solid #29b6f6;
+    transition: border-bottom .5s ease-in-out;
+}
+
+
+InputGroup .search-box {
+    max-width: 750px;
+    width: 100%;
+}
+
+.search-box:focus {
+    outline: none;
+    box-shadow: none;
+    max-width: 500px;
+    width: 100%;
+}
+
