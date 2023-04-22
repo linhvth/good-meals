@@ -1,0 +1,70 @@
+@import '../styles/bootstrap-override.scss';
+
+.dish-container {
+    margin: 12px 12px;
+    padding: 12px 12px;
+    width: 320px;
+    height: 400px;
+}
+
+.col {
+    margin: 0;
+}
+
+.dish-card {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-width: 5px;
+    border-color: #FEAC5D;
+    border-style: solid;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.dish-img {
+    opacity: 0.9;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;  
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.dish-body {
+    position: relative;
+    width: 320px;
+    height: 40px;
+}
+
+.dish-title{
+    line-height: 0px;
+    font-weight: bolder;
+    text-align: center;
+    color: #1D828E;
+    object-fit: cover;  
+    margin: 16px 0px 16px;
+}
+
+.dish-title-text{
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 16px 0px 16px;
+}
+
+.dish-cat {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 0px;
+    align-items: center;
+    text-align: center;
+    /* Bold */
+    color: #1D828E;
+    margin: 16px 0px 16px;
+}

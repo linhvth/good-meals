@@ -1,0 +1,61 @@
+@import '../styles/bootstrap-override.scss';
+
+.title {
+    position: relative;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+    /* Bold */
+    object-fit: cover;
+    color: #1D828E;
+}
+
+.description {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+
+    /* Black */
+    color: #000000;
+}
+
+.division {
+    box-sizing: content-box;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+
+.still {
+    /* Auto layout */
+    margin: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 52px;
+    gap: 10px;
+
+    /* Light */
+    background: #FEAC5D;
+    border: 1px solid #000000;
+    border-radius: 30px;
+}
+
+.still:hover {
+    /* Auto layout */
+    margin: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 52px;
+    gap: 10px;
+    text-decoration: underline;
+    /* Light */
+    background: #FEAC5D;
+    border: 1px solid #000000;
+    border-radius: 30px;
+}
