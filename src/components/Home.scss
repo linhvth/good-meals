@@ -1,0 +1,15 @@
+@import '../styles/bootstrap-override.scss';
+
+.justify-content-between {
+    width: 100% !important;
+}
+
+home_background {
+    width: 100%;
+    height: 640px; 
+    object-fit: cover;
+}
+
+.background {
+    opacity: 0.5;
+}
