@@ -1,12 +1,15 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+
+import article from '../images/article_img.jpg';
+import './Articles.scss'
 
 const Articles = () => {
     return (
         <Container className='py-5 my-3'>
             <div className='division'>
-                Articles
+                <h5 className = 'title'>Articles</h5>
                 <p className='description'>
                 Get updated with informative and engaging content to help you plan 
                 and prepare healthy and delicious meals. From nutrition news and 
@@ -16,11 +19,11 @@ const Articles = () => {
                 </p>
             </div>
             <Row>
-                <Col>
-                    <img>
+                <Col className = "image-col">
+                    <img src = { article } alt= 'This is an'>
                     </img>
                 </Col>
-                <Col>
+                <Col className = "titles-col">
                     <Row>
                         
                     </Row>

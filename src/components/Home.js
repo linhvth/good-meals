@@ -1,12 +1,12 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 // import { useNavigate } from "react-router-dom";
 
 import OurPlans from "../elements/OurPlans";
 import OurDishes from "../elements/OurDish";
 import Articles from "../elements/Articles";
 
-// import image from '../images/slide.jpg';
+import background from '../images/slide.jpg';
 
 function Home() {
     // const navigation = useNavigate();
@@ -14,14 +14,11 @@ function Home() {
 
     return (
         <Container className="py-5 my-3">
-            {/* <div>
-                <img src = { image } alt = { image } fluid></img>
-                <div>
-                <button className='still' onClick = {navigateTo}>
-                    Join Us Now        
-                </button>
-                </div>
-            </div> */}
+            <Container fluid className="p-0">
+                <Card className="home_background">
+                    <img class ="background" src = { background } alt = { background } responsive/>
+                </Card>
+            </Container>
             <OurPlans/>
             <OurDishes/>
             <Articles/>

@@ -1,0 +1,34 @@
+@import '../styles/bootstrap-override.scss';
+
+
+.title {
+    position: relative;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+    /* Bold */
+    object-fit: cover;
+    color: #1D828E;
+}
+
+.description {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+
+    /* Black */
+    color: #000000;
+}
+
+.division {
+    box-sizing: content-box;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
