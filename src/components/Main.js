@@ -9,7 +9,9 @@ import Articles from './Articles'
 import AboutUs from './AboutUs';
 import Help from './Help';
 import LogIn from './LogIn'
-import SignUp from './SignUp'
+import SignUp from './SignUp';
+
+import Plan from '../elements/Plan';
 
 const Main = () => {
     return (
@@ -19,7 +21,7 @@ const Main = () => {
             <Route path='/plans' Component={ Plans } />
             <Route path='/all-dishes' Component={ AllDishes }/>
             <Route path='/articles' Component={ Articles } />
-
+            <Route path='/plan' Component={ Plan } />
             <Route path='/about-us' Component={ AboutUs } />
             <Route path='/help' Component={ Help } />
             <Route path='/log-in' Component={ LogIn } />
