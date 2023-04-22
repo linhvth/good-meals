@@ -12,9 +12,11 @@ home_background {
 
 .background {
     opacity: 0.5;
+    object-fit: cover;
 }
 
 .background_text {
     font-family: Poppins;
     font-size: 32px;
+    text-align: center;
 }
