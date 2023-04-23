@@ -1,9 +1,17 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Card, Row, Col } from 'react-bootstrap';
 // import { useNavigate } from 'react-router-dom';
 
 import article from '../images/article_img.jpg';
 import './Articles.scss'
+
+export const articleName = (props) => {
+    return (
+        <div>
+            <p >{props.content}</p>
+        </div>
+    )
+}
 
 const Articles = () => {
     return (
@@ -20,13 +28,16 @@ const Articles = () => {
             </div>
             <Row>
                 <Col className = "image-col">
-                    <img src = { article } alt= 'This is an'>
+                    <img className = 'article' src = { article } alt= 'This is an article' responsive>
                     </img>
                 </Col>
                 <Col className = "titles-col">
                     <Row>
-                        
+                        <articleName content = "10 ways to eat healthier">
+                        </articleName>
                     </Row>
+                    <>
+                    </>
                 </Col>
             </Row>
         </Container>

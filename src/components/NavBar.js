@@ -9,7 +9,6 @@ import './NavBar.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 
-
 function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className='py-4'>
