@@ -8,7 +8,7 @@ import chicken from '../images/chicken.jpg'
 
 const OurDishes = () => {
     const navigation = useNavigate();
-    const navigateTo = () => navigation('../components/AllDishes');
+    const navigateTo = () => navigation('../all-dishes');
 
     return (
         <Container className='py-5 my-3'>

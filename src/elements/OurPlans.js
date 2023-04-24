@@ -11,7 +11,7 @@ import finish from '../images/planFinish.jpg'
 
 const OurPlans = () => {
     const navigation = useNavigate();
-    const navigateTo = () => navigation('../components/LogIn');
+    const navigateTo = () => navigation('../log-in');
 
     return (
         <Container className='py-5 my-3'>

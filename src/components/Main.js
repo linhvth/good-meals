@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Home from './Home';
+import Home from './Landing';
+import Homepage from './Homepage';
 import AllDishes from './AllDishes';
 import Plans from './Plans'
 import Articles from './Articles'
@@ -18,6 +19,7 @@ const Main = () => {
         <Routes className='main container'>
             <Route path='/' Component={ Home } />
             <Route path='#' Component={ Home } />
+            <Route path='/home' Component={ Homepage } />
             <Route path='/plans' Component={ Plans } />
             <Route path='/all-dishes' Component={ AllDishes }/>
             <Route path='/articles' Component={ Articles } />
