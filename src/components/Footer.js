@@ -28,7 +28,7 @@ const Column = ({ title, links }) => {
 
 export const Footer = () => {
   return (
-    <div className='pt-5 pb-3 container-fluid text-white mt-4' id='footer'>
+    <div className='pt-5 pb-3 container-fluid text-white' id='footer'>
         <Container className='mt-3'>
             <Row className='mb-1'>
                     <Col lg={4} className='my-auto fw-bold brand-name'>Good Meals</Col> 
