@@ -11,13 +11,13 @@ import finish from '../images/planFinish.jpg'
 
 const OurPlans = () => {
     const navigation = useNavigate();
-    const navigateTo = () => navigation('../sign-up');
+    const navigateTo = () => navigation('../log-in');
 
     return (
         <Container className='py-5 my-3'>
         <div className = 'title'>
             Our Plans
-            <p className='description'>
+            <p className='description py-4'>
             We offers a variety of meal planning options to fit your lifestyle 
             and dietary needs. Choose from our weekly or monthly plans and enjoy 
             delicious, healthy meals delivered right to your door. Say goodbye 

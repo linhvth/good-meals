@@ -8,13 +8,13 @@ import chicken from '../images/chicken.jpg'
 
 const OurDishes = () => {
     const navigation = useNavigate();
-    const navigateTo = () => navigation('./all-dishes');
+    const navigateTo = () => navigation('../all-dishes');
 
     return (
         <Container className='py-5 my-3'>
         <div className = 'title'>
             Popular Dishes
-            <p className='description'>
+            <p className='description py-4'>
             A feature of our most loved and highly-rated meals that are both 
             delicious and nutritious. Made with fresh, wholesome ingredients and 
             packed with essential vitamins and minerals, these dishes are the perfect 

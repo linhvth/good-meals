@@ -1,17 +1,8 @@
 import React from 'react';
-import { Container, Card, Row, Col } from 'react-bootstrap';
-// import { useNavigate } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap'
 
 import article from '../images/article_img.jpg';
 import './Articles.scss'
-
-export const articleName = (props) => {
-    return (
-        <div>
-            <p >{props.content}</p>
-        </div>
-    )
-}
 
 const Articles = () => {
     return (
@@ -26,18 +17,15 @@ const Articles = () => {
                 or information on special diets, our article section has something for everyone.
                 </p>
             </div>
-            <Row>
-                <Col className = "image-col">
-                    <img className = 'article' src = { article } alt= 'This is an article' responsive>
+            <Row className='py-5'>
+                <Col className = "image-col col-6">
+                    <img src = { article } alt= 'This is an' className='w-100 article-img'>
                     </img>
                 </Col>
-                <Col className = "titles-col">
+                <Col className = "titles-col col-6">
                     <Row>
-                        <articleName content = "10 ways to eat healthier">
-                        </articleName>
+                        
                     </Row>
-                    <>
-                    </>
                 </Col>
             </Row>
         </Container>
