@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,10 +8,29 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import './NavBar.scss'
 
+import { useAuth } from "../contexts/AuthProvider"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
+import { NavDropdown, NavLink } from 'react-bootstrap';
 
 function NavBar() {
+  const { currUser, logout } = useAuth();
+  const [error, setError] = useState('');
+  console.log(currUser);
+  const toLanding = useNavigate();
+  
+  async function handleLogout() {
+    setError('')
+
+    try {
+      await logout();
+      toLanding('/');
+    } catch {
+      setError('Failed to log out. Try again.')
+    }
+  }
+
   return (
     <Navbar collapseOnSelect expand="lg" className='py-4'>
       {/* Navigation section */}
@@ -25,8 +46,27 @@ function NavBar() {
                 <Nav.Link href='#/articles'>Articles</Nav.Link>
                 <Nav.Link className='ms-auto' href="#/about-us">About Us</Nav.Link>
                 <Nav.Link href="#/help">Help</Nav.Link>
-                <Nav.Link href="#/log-in">Log In</Nav.Link>
-                <Nav.Link href="#/sign-up">Sign Up</Nav.Link>
+                { currUser ?
+                  <>
+                    <NavDropdown title="My Account" id="nav-dropdown">
+                      <NavDropdown.Item>
+                        <NavLink className='text-black' href='/'>My Profile</NavLink>
+                      </NavDropdown.Item>
+                      
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item>
+                        <NavLink className="text-black" href='/' onClick={ handleLogout }>Log Out</NavLink>
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                    {/* <Nav.Link href="#/">My Profile</Nav.Link>
+                    <Nav.Link href='/' onClick={ handleLogout }>Log Out</Nav.Link> */}
+                  </>
+                  :
+                  <>
+                    <Nav.Link href="#/log-in">Log In</Nav.Link>
+                    <Nav.Link href="#/sign-up">Sign Up</Nav.Link>
+                  </>
+                }
           </Nav>
           
         </Navbar.Collapse>
@@ -34,7 +74,7 @@ function NavBar() {
 
       {/* Search box */}
       <Container className='mx-auto'>
-        <InputGroup className="d-flex my-3 mx-auto">
+        <InputGroup className="d-flex mt-3 mx-auto">
           <Form.Control
               type="search"
               placeholder="Search any dishes (e.g. potato, chicken, etc.)"

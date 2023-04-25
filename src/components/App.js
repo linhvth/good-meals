@@ -7,11 +7,13 @@ import Footer from './Footer'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import { AuthProvider } from "../contexts/AuthProvider";
 
 
 
 function App() {
   return (
+    <AuthProvider>
     <HashRouter>
       <Fragment>
         <NavBar />
@@ -19,6 +21,7 @@ function App() {
         <Footer />
       </Fragment>
     </HashRouter>
+    </AuthProvider>
   );
 }
 
