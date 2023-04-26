@@ -34,7 +34,7 @@ const OurDishes = () => {
             </Col>
         </Row>
         <div className='division'>
-            Or
+            <strong> Or </strong>
             <div>
             <button className='still' onClick = {navigateTo}>
                 Browse More Dishes            

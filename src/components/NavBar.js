@@ -19,7 +19,12 @@ function NavBar() {
   const [error, setError] = useState('');
   console.log(currUser);
   const toLanding = useNavigate();
-  
+  const toAccount = useNavigate();
+
+  function handleAccount() {
+    toAccount('/my-account')
+  }
+
   async function handleLogout() {
     setError('')
 
@@ -50,7 +55,7 @@ function NavBar() {
                   <>
                     <NavDropdown title="My Account" id="nav-dropdown">
                       <NavDropdown.Item>
-                        <NavLink className='text-black' href='/'>My Profile</NavLink>
+                        <NavLink className='text-black' href='/my-account#' onClick={ handleAccount }>My Profile</NavLink>
                       </NavDropdown.Item>
                       
                       <NavDropdown.Divider />

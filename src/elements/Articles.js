@@ -1,10 +1,14 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Card, Row, Col } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 import article from '../images/article_img.jpg';
 import './Articles.scss'
 
 const Articles = () => {
+    const navigation = useNavigate();
+    const navigateTo = () => navigation('../articles');
+
     return (
         <Container className='py-5 my-3'>
             <div className='division'>
@@ -22,10 +26,21 @@ const Articles = () => {
                     <img src = { article } alt= 'This is an' className='w-100 article-img'>
                     </img>
                 </Col>
-                <Col className = "titles-col col-6">
-                    <Row>
-                        
-                    </Row>
+                <Col> 
+                    <div className = 'article-titles'>
+                        <Card>
+                            <Card.Title> 10 quicks and easy meal preps for busy weeknights </Card.Title>
+                            <Card.Text onClick = {navigateTo}> Read more</Card.Text>
+                        </Card>
+                        <Card>
+                            <Card.Title> 10 quicks and easy meal preps for busy weeknights </Card.Title>
+                            <Card.Text onClick = {navigateTo}> Read more</Card.Text>
+                        </Card>
+                        <Card>
+                            <Card.Title> 10 quicks and easy meal preps for busy weeknights </Card.Title>
+                            <Card.Text onClick = {navigateTo}> Read more</Card.Text>
+                        </Card>
+                    </div>
                 </Col>
             </Row>
         </Container>
