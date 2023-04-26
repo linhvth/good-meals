@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/meal-plan/static/css/main.a48a5221.css",
-    "main.js": "/meal-plan/static/js/main.89ac694e.js",
+    "main.css": "/meal-plan/static/css/main.3b4e53df.css",
+    "main.js": "/meal-plan/static/js/main.543d497f.js",
     "static/js/787.97af3e39.chunk.js": "/meal-plan/static/js/787.97af3e39.chunk.js",
     "static/media/planSprint.jpg": "/meal-plan/static/media/planSprint.31f83f7ee8cbe89f0726.jpg",
     "static/media/profile.jpg": "/meal-plan/static/media/profile.8a47ef65bc2b8a1d375e.jpg",
@@ -17,12 +17,12 @@
     "static/media/poppins-latin-400-normal.woff2": "/meal-plan/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
     "static/media/poppins-latin-ext-400-normal.woff2": "/meal-plan/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/meal-plan/index.html",
-    "main.a48a5221.css.map": "/meal-plan/static/css/main.a48a5221.css.map",
-    "main.89ac694e.js.map": "/meal-plan/static/js/main.89ac694e.js.map",
+    "main.3b4e53df.css.map": "/meal-plan/static/css/main.3b4e53df.css.map",
+    "main.543d497f.js.map": "/meal-plan/static/js/main.543d497f.js.map",
     "787.97af3e39.chunk.js.map": "/meal-plan/static/js/787.97af3e39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a48a5221.css",
-    "static/js/main.89ac694e.js"
+    "static/css/main.3b4e53df.css",
+    "static/js/main.543d497f.js"
   ]
 }
