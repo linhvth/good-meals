@@ -13,10 +13,10 @@ export function MyProfileNavbar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="flex-column me-auto" style={{ width: '100%' }}>
-              <Nav.Link href="#settings" style={{ color: 'black' }}>Settings</Nav.Link>
-              <Nav.Link href="#my-diet" style={{ color: 'black' }}>My Diet</Nav.Link>
-              <Nav.Link href="#plan" style={{ color: 'black' }}>Plan</Nav.Link>
-              <Nav.Link href="#help" style={{ color: 'black' }}>Help</Nav.Link>
+              <Nav.Link href="/settings" style={{ color: 'black' }}>Settings</Nav.Link>
+              <Nav.Link href="/my-diet" style={{ color: 'black' }}>My Diet</Nav.Link>
+              <Nav.Link href="/plan" style={{ color: 'black' }}>Plan</Nav.Link>
+              <Nav.Link href="/help" style={{ color: 'black' }}>Help</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
