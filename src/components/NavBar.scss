@@ -5,8 +5,15 @@
 }
 
 Nav {
-    background-color: $primary;
     flex-flow: column;
+}
+
+#navbar {
+    background-color: $primary;
+}
+
+.nav-fixed {
+    background-color: white;
 }
 
 .navbar-brand {

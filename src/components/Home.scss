@@ -1,13 +1,5 @@
 @import '../styles/bootstrap-override.scss';
 
-div#hero {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100% !important;
-}
-
-
 .justify-content-between {
     width: 100% !important;
 }
@@ -21,10 +13,15 @@ div#hero {
 }
 
 .background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100% !important;
     opacity: 0.5;
     object-fit: cover;
     width: 100%;
-    height: 500px;
+    max-height: 640px;
+    height: 100vh;
 }
 
 .background_text {

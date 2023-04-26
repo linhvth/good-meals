@@ -17,8 +17,8 @@ const Hero = () => {
     const toLogIn = () => navigation('../log-in');
 
     return (
-        <Card className="home-background h-100">
-            <img className ="background hero" src = { background } alt = { background } responsive/>
+        <Card className="home-background">
+            <img className ="background" src = { background } alt = { background } responsive/>
             <h1 className="background_text">
                 Customize your diet with selection from thousands of dishes <br/>
                 <div className = "spacing-40"></div>
@@ -40,15 +40,15 @@ function Home() {
         <>
             { currUser 
                 ?
-                    <Container fluid className="">
-                        <Slider/>
-                    </Container>
+                    <Slider/>
                 :
                     <div>
                         <Hero />
-                        <OurPlans />
-                        <OurDishes />
-                        <Articles />
+                        <Container>
+                            <OurPlans />
+                            <OurDishes />
+                            <Articles />
+                        </Container>
                     </div>
             }
         </>

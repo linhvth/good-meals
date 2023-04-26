@@ -1,7 +1,21 @@
 @import '../styles/bootstrap-override.scss';
 
-.nav-link {
+#profile-setting .nav-link {
     color: black !important;
+}
+
+#profile-setting {
+    background-color: transparent !important;
+}
+
+#profile-img {
+    width: 200px;
+    height: 200px;
+}
+
+#profile-img img {
+    object-fit: cover;
+    border-radius: 100px;
 }
 
 .info-row {

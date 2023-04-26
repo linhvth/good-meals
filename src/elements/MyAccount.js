@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
 
 import profile from '../images/profile.jpg'
 import './MyAccount.scss'
@@ -8,15 +7,15 @@ import './MyAccount.scss'
 
 export function MyProfileNavbar() {
     return (
-      <Navbar style={{ backgroundColor: 'transparent'}} expand="lg">
+      <Navbar expand="lg" id='profile-setting'>
         <Container className = "setting-box">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="flex-column me-auto" style={{ width: '100%' }}>
-              <Nav.Link href="/settings" style={{ color: 'black' }}>Settings</Nav.Link>
-              <Nav.Link href="/my-diet" style={{ color: 'black' }}>My Diet</Nav.Link>
-              <Nav.Link href="/plan" style={{ color: 'black' }}>Plan</Nav.Link>
-              <Nav.Link href="/help" style={{ color: 'black' }}>Help</Nav.Link>
+            <Nav className="flex-column me-auto w-100">
+              <Nav.Link href="/settings">Settings</Nav.Link>
+              <Nav.Link href="/my-diet">My Diet</Nav.Link>
+              <Nav.Link href="/plan">Plan</Nav.Link>
+              <Nav.Link href="/help">Help</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -26,17 +25,11 @@ export function MyProfileNavbar() {
 
 export function MyProfileContent() {
   return (
-    <Container className='py-0'>
-      <div style={{ 
-        width: '200px', 
-        height: '200px'}}>
-        <img src = {profile} alt = 'profile' style = {{ 
-          width: '100%', 
-          height: '100%', 
-          objectFit: 'cover', 
-          borderRadius: '100px'}}>
-        </img>
+    <Container>
+      <div id='profile-img'>
+        <img src={profile} alt='profile' className='w-100 h-100' />
       </div>
+
       <h2 className='section-head'> General Info </h2>
       <Form.Group className='mb-3'>
         <Row className = 'info-row'>
@@ -49,7 +42,7 @@ export function MyProfileContent() {
             <Form.Control type="text" value="Hoang" readOnly/>
           </Col>
         </Row>
-        <Row className = 'info-row'>
+        <Row className='info-row'>
           <Col>
             <Form.Label>EMAIL ADDRESS</Form.Label>
             <Form.Control type="text" value="chikim0101@gmail.com" readOnly/>
@@ -59,7 +52,7 @@ export function MyProfileContent() {
             <Form.Control type="text" value="+84123456789" readOnly/>
           </Col>
         </Row>
-        <Row className = 'info-row'>
+        <Row className='info-row'>
           <Col>
             <Form.Label>BIRTHDATE</Form.Label>
             <Form.Control type="text" value="01/01/2002" readOnly/>
