@@ -38,3 +38,27 @@
     border: 5px #6b6b6b;
     border-style: solid;
 }
+
+.card {
+    border-width: 0px !important;
+    border-top: #000000 !important;
+    border-top-width: 1px !important;
+    border-radius: 0 !important;
+    border-top-style: solid !important;
+    
+}
+
+.card-title {
+    font-weight: bold !important;
+    color: #1D828E !important;
+    margin: 16px 16px 16px !important;
+}
+
+.card-text {
+    margin: 0px 16px 16px !important;
+}
+
+.card-text:hover {
+    text-decoration: underline;
+    margin: 0px 16px 16px !important;
+}
