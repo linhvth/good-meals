@@ -1,11 +1,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-function Plans() {
+const Plans = () => {
     return (
-        <Container className="py-5 my-3">
+        <div>
+            <Container className="py-5 my-3">
             Plans Page. Coming soon.
-        </Container>
+            </Container>
+        </div>
+        
     )
 }
 

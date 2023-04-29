@@ -14,13 +14,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import { NavDropdown, NavLink } from 'react-bootstrap';
 
+const SearchBox=() => {
+  return (
+    <Container className='mx-auto'>
+      <InputGroup className="d-flex mt-2 mb-3 mx-auto">
+        <Form.Control
+            type="search"
+            placeholder="Search any dishes (e.g. potato, chicken, etc.)"
+            className="search-box"
+            aria-label="Search"
+        />
+        <Button variant='outline-light' id='search-button'>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </Button>
+      </InputGroup>
+    </Container>
+  )
+}
 
 function NavBar() {
   const { currUser, logout } = useAuth();
   const [error, setError] = useState('');
-  console.log(currUser);
+  const [ fix, setFix ] = useState(false);
   const toLanding = useNavigate();
-  
+  const toAccount = useNavigate();
+
+  function handleAccount() {
+    toAccount('/my-account')
+  }
+
   async function handleLogout() {
     setError('')
 
@@ -32,10 +54,20 @@ function NavBar() {
     }
   }
 
+  function setFixed () {
+    if (window.scrollY >= 100) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  }
+
+  window.addEventListener("scroll", setFixed);
+
   return (
-    <Navbar collapseOnSelect expand="lg" className='py-4'>
+    <Navbar collapseOnSelect expand="lg" className='py-2' sticky='top' id='navbar'>
       {/* Navigation section */}
-      <Container>
+      <Container id='navbar'>
         <Navbar.Brand href="#/" className='fw-bold'>Good Meals</Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -51,7 +83,7 @@ function NavBar() {
                   <>
                     <NavDropdown title="My Account" id="nav-dropdown">
                       <NavDropdown.Item>
-                        <NavLink className='text-black' href='/'>My Profile</NavLink>
+                        <NavLink className='text-black' href='/my-account#' onClick={ handleAccount }>My Profile</NavLink>
                       </NavDropdown.Item>
                       
                       <NavDropdown.Divider />
@@ -59,8 +91,6 @@ function NavBar() {
                         <NavLink className="text-black" href='/' onClick={ handleLogout }>Log Out</NavLink>
                       </NavDropdown.Item>
                     </NavDropdown>
-                    {/* <Nav.Link href="#/">My Profile</Nav.Link>
-                    <Nav.Link href='/' onClick={ handleLogout }>Log Out</Nav.Link> */}
                   </>
                   :
                   <>
@@ -74,18 +104,7 @@ function NavBar() {
       </Container>
 
       {/* Search box */}
-      <Container className='mx-auto'>
-        <InputGroup className="d-flex mt-3 mx-auto">
-          <Form.Control
-              type="search"
-              placeholder="Search any dishes (e.g. potato, chicken, etc.)"
-              className="search-box"
-              aria-label="Search"/>
-            <Button variant='outline-light' id='search-button'>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </Button>
-        </InputGroup>
-      </Container>
+      { fix ? <div /> : <SearchBox /> }
     </Navbar>
   );
 }

@@ -10,6 +10,7 @@ import './App.css';
 import { AuthProvider } from "../contexts/AuthProvider";
 
 
+
 function App() {
   return (
     <AuthProvider>
