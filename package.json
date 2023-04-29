@@ -1,6 +1,6 @@
 {
-  "name": "meal-plan",
-  "homepage": "https://linhvth.github.io/meal-plan",
+  "name": "good-meals",
+  "homepage": "https://linhvth.github.io/good-meals",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
