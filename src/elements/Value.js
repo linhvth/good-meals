@@ -18,4 +18,4 @@ const Value = ({ title, description, image }) => {
     )
 }
 
-export default Plan
+export default Value

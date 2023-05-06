@@ -1,12 +1,12 @@
 import React from 'react';
 // import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-bootstrap';
-import Plan from './Plan';
+import Value from './Value';
 import './OurValues.scss';
 
-import jumpStart from '../images/planStart.jpg'
-import sprint from '../images/planSprint.jpg'
-import finish from '../images/planFinish.jpg'
+import community from '../images/community.jpg'
+import health from '../images/meditate.jpg'
+import convenient from '../images/convenient.jpg'
 
 const OurValues = () => {
     return (
@@ -21,21 +21,21 @@ const OurValues = () => {
             </p>
         </div>
         <Row>
-            <Col>
-            <Plan title= "Jumpstart" description="Good Meals determine to 
+            <Col className ="col-sm-4">
+            <Value title= "Community-Driven" description="Good Meals determine to 
             contribute its profit to resolve the waste management issues, 
-            supporting local farmers and charities." image={ jumpStart }/>
+            supporting local farmers and charities." image={ community }/>
             </Col>
-            <Col>
-            <Plan title= "Sprint" description="We care about your health, 
+            <Col className ="col-sm-4">
+            <Value title= "Health-Oriented" description="We care about your health, 
             and we believe that diets contribute a great portion to how you feel 
             during the day, so our meals are selected and crafted to provide 
-            the best nutrition for you regardless of your identity." image={ sprint }/>
+            the best nutrition for you regardless of your identity." image={ health }/>
             </Col>
-            <Col>
-            <Plan title= "Triathlon" description="Knowing that you come to us 
+            <Col className ="col-sm-4">
+            <Value title= "Convenient" description="Knowing that you come to us 
             as a solution to your busy time, we want to make sure the meals 
-            we suggest to you are time-convenient and tailor to your needs." image={ finish }/>
+            we suggest to you are time-convenient and tailor to your needs." image={ convenient }/>
             </Col>
         </Row>
         </Container>
