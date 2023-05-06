@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Card } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthProvider";
 import './AboutUs.scss';
+import Timeline from "../elements/Timeline";
 import OurValues from "../elements/OurValues";
 import hero from '../images/aboutus_hero.jpg';
 
@@ -26,6 +27,7 @@ function AboutUs() {
                     <div>
                         <Hero />
                         <Container>
+                            <Timeline />
                             <OurValues />
                         </Container>
                     </div>
@@ -33,6 +35,7 @@ function AboutUs() {
                     <div>
                         <Hero />
                         <Container>
+                            <Timeline />
                             <OurValues />
                         </Container>
                     </div>

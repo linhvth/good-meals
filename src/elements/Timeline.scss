@@ -1,0 +1,19 @@
+@import '../styles/bootstrap-override.scss';
+
+.justify-content-between {
+    width: 100% !important;
+}
+.horizontal-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 255px;
+    border: 1px solid black;
+}
+.timeline-item {
+    list-style: none;
+    text-align: center;
+}
