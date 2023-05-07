@@ -15,26 +15,41 @@ function LogIn() {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useNavigate();
-
+    
     let navigate = useNavigate();
     const routeSignUp = () => {
         let path = '/sign-up';
         navigate(path);
     }
+    
+    const validateForm = () => {
+        const newErrors = {}
+        console.log('validateForm')
+        if (!emailRef.current.value || emailRef.current.value === '') newErrors.emailBlank = 'Please enter your email!'
+        if (!passwordRef.current.value || passwordRef.current.value === '') newErrors.passwordBlank = 'Please enter your last name!'
+
+        console.log(newErrors);
+        return newErrors
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
-
-        try {
-            setError('')
-            setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value )
-            history('/');
-        } catch {
-            setError('Incorrect username or password.')
+        const formErrors = setError(validateForm)
+        if (Object.keys(formErrors).length > 0) {
+            setError(formErrors);
         }
+        else {
+            try {
+                setError('')
+                setLoading(true)
+                await login(emailRef.current.value, passwordRef.current.value )
+                history('/');
+            } catch {
+                setError('Incorrect username or password.')
+            }
 
-        setLoading(false);
+            setLoading(false);
+        }
     }
 
 
