@@ -3,17 +3,35 @@
 .justify-content-between {
     width: 100% !important;
 }
-.horizontal-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.line {
-    width: 255px;
-    border: 1px solid black;
+.row-timeline {
+    border-top: 1px solid black;
+    position: relative;
+    align-items: flex-start;
+}
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .timeline-item {
-    list-style: none;
+    display: block;
+    position: relative;
     text-align: center;
+    margin-right: 30px;  
 }
+.timeline-item::before{
+    content: "";
+    position: absolute;
+    height: 40px;
+    border-right: 1px dashed black;
+    top: 0;
+}
+@media (min-width: 1140px) {
+    .timeline-item {  
+        display: inline-block;
+        width: 22%;
+        padding-top: 45px;
+    }
+  }

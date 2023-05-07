@@ -1,5 +1,4 @@
 import React from 'react';
-// import Button from 'react-bootstrap/Button'
 import { Container, Row, Col } from 'react-bootstrap';
 import './Timeline.scss';
 
@@ -15,10 +14,8 @@ const Timeline = () => {
                 We are committed to promoting sustainable and ethical practices in the food industry. 
                 </p>
             </div>
-     
-            <Row>
-                <Col className = "col">
-                
+            <Row className = "row-timeline">
+                <Col className = "col-timeline">    
                     <ul className = "timeline">
                         <li className = "timeline-item">
                             <h5 style={{color: ('#FEAC5D')}}>2020</h5>
@@ -30,10 +27,6 @@ const Timeline = () => {
                             to its customers.
                             </p> 
                         </li>
-                    </ul>    
-                </Col>
-                <Col className = "col">
-                    <ul className = "timeline">
                         <li className = "timeline-item">
                             <h5 style={{color: ('#1D828E')}}>2021</h5>
                             <p className='description py-4'>
@@ -44,10 +37,6 @@ const Timeline = () => {
                             balanced and satisfying options for busy individuals and families.
                             </p> 
                         </li>
-                    </ul>         
-                </Col>
-                <Col className = "col">
-                    <ul className = "timeline">
                         <li className = "timeline-item">
                             <h5 style={{color: ('#FEAC5D')}}>2022</h5>
                             <p className='description py-4'>
@@ -58,12 +47,8 @@ const Timeline = () => {
                             and promoting sustainable food practices.
                             </p> 
                         </li>
-                    </ul>         
-                </Col>
-                <Col className = "col">
-                    <ul className = "timeline">
                         <li className = "timeline-item">
-                            <h5  style={{color: ('#FEAC5D')}}>2023</h5>
+                            <h5  style={{color: ('#1D828E')}}>2023</h5>
                             <p className='description py-4'>
                             In 2023, <strong>Good Meals</strong> aim to reach a major milestone of 
                             serving over 1 million customers. This achievement solidified the company’s 
@@ -71,7 +56,7 @@ const Timeline = () => {
                             demonstrated the strong demand for its services.
                             </p> 
                         </li>
-                    </ul>         
+                    </ul>    
                 </Col>
             </Row>
         
