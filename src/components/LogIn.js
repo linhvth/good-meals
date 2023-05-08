@@ -22,21 +22,15 @@ function LogIn() {
         navigate(path);
     }
     
-    const validateForm = () => {
-        const newErrors = {}
-        console.log('validateForm')
-        if (!emailRef.current.value || emailRef.current.value === '') newErrors.emailBlank = 'Please enter your email!'
-        if (!passwordRef.current.value || passwordRef.current.value === '') newErrors.passwordBlank = 'Please enter your last name!'
-
-        console.log(newErrors);
-        return newErrors
-    }
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const formErrors = setError(validateForm)
-        if (Object.keys(formErrors).length > 0) {
-            setError(formErrors);
+
+        if (!emailRef.current.value || emailRef.current.value === '') {
+            setError('Username must not be a blank');
+        }
+        else if (!passwordRef.current.value || passwordRef.current.value === ''){
+            setError('Password must not be a blank')
         }
         else {
             try {
@@ -70,7 +64,7 @@ function LogIn() {
                         autoComplete="off"
                         // onChange={(e) => setUser(e.target.value)}
                         // value={ user }
-                        required
+                        // required
                     />
                 </Form.Group>
 
@@ -82,7 +76,7 @@ function LogIn() {
                         ref={ passwordRef }
                         // onChange={(e) => setPwd(e.target.value)}
                         // value={ pwd }
-                        required 
+                        // required 
                     />
                 </Form.Group>
 
