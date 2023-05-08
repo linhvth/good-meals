@@ -1,14 +1,18 @@
 {
   "files": {
-    "main.css": "/good-meals/static/css/main.bf7680df.css",
-    "main.js": "/good-meals/static/js/main.c6926c67.js",
+    "main.css": "/good-meals/static/css/main.31875b16.css",
+    "main.js": "/good-meals/static/js/main.223d2d75.js",
     "static/js/787.80710c6d.chunk.js": "/good-meals/static/js/787.80710c6d.chunk.js",
     "static/media/planSprint.jpg": "/good-meals/static/media/planSprint.31f83f7ee8cbe89f0726.jpg",
     "static/media/profile.jpg": "/good-meals/static/media/profile.8a47ef65bc2b8a1d375e.jpg",
+    "static/media/community.jpg": "/good-meals/static/media/community.64a385583066fecce707.jpg",
+    "static/media/convenient.jpg": "/good-meals/static/media/convenient.0028d124b7611be70cb3.jpg",
     "static/media/chicken.jpg": "/good-meals/static/media/chicken.d40c037a2e0bccf35caa.jpg",
     "static/media/slider2.jpg": "/good-meals/static/media/slider2.2a9b514e6a92b4a48242.jpg",
+    "static/media/meditate.jpg": "/good-meals/static/media/meditate.cbb98853598edf130699.jpg",
     "static/media/article_img.jpg": "/good-meals/static/media/article_img.b15ae00b24dca2f2cc9a.jpg",
     "static/media/planStart.jpg": "/good-meals/static/media/planStart.e187618674cb1c55f122.jpg",
+    "static/media/aboutus_hero.jpg": "/good-meals/static/media/aboutus_hero.50b83f56a61c217cf36a.jpg",
     "static/media/planFinish.jpg": "/good-meals/static/media/planFinish.eca7764c40692edb7c8e.jpg",
     "static/media/home_background.jpg": "/good-meals/static/media/home_background.09a33289d8987f2bfa8a.jpg",
     "static/media/slider1.jpg": "/good-meals/static/media/slider1.dbc689290cfd5fe9727e.jpg",
@@ -17,12 +21,12 @@
     "static/media/poppins-latin-400-normal.woff2": "/good-meals/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
     "static/media/poppins-latin-ext-400-normal.woff2": "/good-meals/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/good-meals/index.html",
-    "main.bf7680df.css.map": "/good-meals/static/css/main.bf7680df.css.map",
-    "main.c6926c67.js.map": "/good-meals/static/js/main.c6926c67.js.map",
+    "main.31875b16.css.map": "/good-meals/static/css/main.31875b16.css.map",
+    "main.223d2d75.js.map": "/good-meals/static/js/main.223d2d75.js.map",
     "787.80710c6d.chunk.js.map": "/good-meals/static/js/787.80710c6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf7680df.css",
-    "static/js/main.c6926c67.js"
+    "static/css/main.31875b16.css",
+    "static/js/main.223d2d75.js"
   ]
 }
