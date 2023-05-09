@@ -13,24 +13,44 @@ function LogIn() {
     const passwordRef = useRef();
     const { login } = useAuth();
     const [error, setError] = useState('');
+    const [blankErrors, setBlankErrors] = useState({});
     const [loading, setLoading] = useState(false);
+    const [form, setForm] = useState({})
     const history = useNavigate();
-    
+
     let navigate = useNavigate();
     const routeSignUp = () => {
         let path = '/sign-up';
         navigate(path);
     }
-    
+
+    const setField = (field, value) => {
+        setForm( {
+            ...form,
+            [field]:value
+        })
+
+        if (!!blankErrors[field])
+        setBlankErrors({
+            ...blankErrors,
+            [field]:null
+        })
+    }
+
+    const blankErrorsValidation = () => {
+        const {email, password} = form
+        const newErrors = {}
+        if (!email || email === '') newErrors.email = 'Please enter your email'
+        if (!password || password === '') newErrors.password = 'Please enter your password'
+        return newErrors
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
-
-        if (!emailRef.current.value || emailRef.current.value === '') {
-            setError('Username must not be a blank');
-        }
-        else if (!passwordRef.current.value || passwordRef.current.value === ''){
-            setError('Password must not be a blank')
+        const blankErrors = blankErrorsValidation()
+        if (Object.keys(blankErrors).length > 0){
+            setBlankErrors(blankErrors)
+            console.log(blankErrors)
         }
         else {
             try {
@@ -41,9 +61,9 @@ function LogIn() {
             } catch {
                 setError('Incorrect username or password.')
             }
-
-            setLoading(false);
         }
+
+        setLoading(false);
     }
 
 
@@ -62,10 +82,12 @@ function LogIn() {
                         id="username" 
                         ref={ emailRef }
                         autoComplete="off"
-                        // onChange={(e) => setUser(e.target.value)}
-                        // value={ user }
+                        onChange={(e) => setField('email', e.target.value)}
+                        value={ form.email }
+                        isInvalid = { !!blankErrors.email}
                         // required
                     />
+                    <Form.Control.Feedback type='invalid'>{ blankErrors.email }</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId=''>
@@ -74,10 +96,12 @@ function LogIn() {
                         placeholder='Password'
                         id="password"
                         ref={ passwordRef }
-                        // onChange={(e) => setPwd(e.target.value)}
-                        // value={ pwd }
+                        onChange={(e) => setField('password', e.target.value)}
+                        isInvalid = {!!blankErrors.password}
+                        value={ form.password }
                         // required 
                     />
+                    <Form.Control.Feedback type='invalid'>{ blankErrors.password }</Form.Control.Feedback>
                 </Form.Group>
 
                 <p className="" class='msg'>Forgot your password? Click here to reset.</p>
