@@ -1,0 +1,58 @@
+@import '../styles/bootstrap-override.scss';
+
+.value-container {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-card {
+    position: relative;
+    height: 380px;
+    border-width: 5px;
+    border-color: #FEAC5D;
+    border-style: solid;
+    border-radius: 30px;
+    align-items: center;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.value-img {
+    position: relative;
+    opacity: 0.9;
+    object-fit: cover;
+    width: 100%;
+    height: 320px;  
+    align-items: center;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.value-body {
+    position: relative;
+    width: 320px;
+}
+
+.value-title{
+    line-height: 48px;
+    font-weight: bolder;
+    text-align: center;
+    object-fit: cover;
+    color: #1D828E;
+}
+
+.value-title-text{
+    font-family: 'Poppins';
+    font-style: italic;
+    font-size: 24px;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.1px #FEAC5D;
+}
+
+.value-des {
+    margin: 8px 8px 8px;
+}

@@ -85,7 +85,7 @@ function SignUp() {
                 } 
                 else {
                     console.log(signUpErr);
-                    setError('Failed to creat an account.')
+                    setError('Failed to create an account.')
                 }
             }
 
