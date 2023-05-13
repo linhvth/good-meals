@@ -1,9 +1,22 @@
-import React from 'react';
-import { Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react';
+import { Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap';
+import { app, db } from '../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 import profile from '../images/profile.jpg'
 import './MyAccount.scss'
 
+const docRef = doc(db, 'userInfo', 'Q20heTK1sV0k0eKxoElwNnMJoa02');
+console.log(docRef)
+
+const docSnap = await getDoc(docRef);
+
+if (docSnap.exists()) {
+  console.log("Document data:", docSnap.data());
+} else {
+  // docSnap.data() will be undefined in this case
+  console.log("No such document!");
+}
 
 export function MyProfileNavbar() {
     return (
@@ -92,7 +105,9 @@ export function MyProfileContent() {
   )
 }
 
-const MyAccount = () => {
+function MyAccount () {
+  const [data, setData] = useState(null);
+
     return (
       <Container className='py-5 my-3'>
         <Row>
@@ -109,5 +124,6 @@ const MyAccount = () => {
       </Container>
     )
 }
+
 
 export default MyAccount
