@@ -1,0 +1,9 @@
+@import '../styles/bootstrap-override.scss';
+
+.plan-description {
+    text-align: left;
+    font-size: calc(12px + (18 - 12) * ((100vw - 360px) / (1440 - 360)));
+}
+.plan-detail {
+    font-size: calc(12px + (18 - 12) * ((100vw - 360px) / (1440 - 360)));
+}
