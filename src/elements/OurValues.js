@@ -21,18 +21,18 @@ const OurValues = () => {
             </p>
         </div>
         <Row>
-            <Col className ="col-sm-4">
+            <Col xs={12} sm ={12} md={4}>
             <Value title= "Community-Driven" description="Good Meals determine to 
             contribute its profit to resolve the waste management issues, 
             supporting local farmers and charities." image={ community }/>
             </Col>
-            <Col className ="col-sm-4">
+            <Col xs={12} sm ={12} md={4}>
             <Value title= "Health-Oriented" description="We care about your health, 
             and we believe that diets contribute a great portion to how you feel 
             during the day, so our meals are selected and crafted to provide 
             the best nutrition for you regardless of your identity." image={ health }/>
             </Col>
-            <Col className ="col-sm-4">
+            <Col xs={12} sm ={12} md={4}>
             <Value title= "Convenient" description="Knowing that you come to us 
             as a solution to your busy time, we want to make sure the meals 
             we suggest to you are time-convenient and tailor to your needs." image={ convenient }/>
