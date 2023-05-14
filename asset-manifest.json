@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/good-meals/static/css/main.31875b16.css",
-    "main.js": "/good-meals/static/js/main.633def70.js",
+    "main.css": "/good-meals/static/css/main.0aa8bcc3.css",
+    "main.js": "/good-meals/static/js/main.bdaf8ef6.js",
     "static/js/787.80710c6d.chunk.js": "/good-meals/static/js/787.80710c6d.chunk.js",
     "static/media/planSprint.jpg": "/good-meals/static/media/planSprint.31f83f7ee8cbe89f0726.jpg",
     "static/media/profile.jpg": "/good-meals/static/media/profile.8a47ef65bc2b8a1d375e.jpg",
@@ -21,12 +21,12 @@
     "static/media/poppins-latin-400-normal.woff2": "/good-meals/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
     "static/media/poppins-latin-ext-400-normal.woff2": "/good-meals/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/good-meals/index.html",
-    "main.31875b16.css.map": "/good-meals/static/css/main.31875b16.css.map",
-    "main.633def70.js.map": "/good-meals/static/js/main.633def70.js.map",
+    "main.0aa8bcc3.css.map": "/good-meals/static/css/main.0aa8bcc3.css.map",
+    "main.bdaf8ef6.js.map": "/good-meals/static/js/main.bdaf8ef6.js.map",
     "787.80710c6d.chunk.js.map": "/good-meals/static/js/787.80710c6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31875b16.css",
-    "static/js/main.633def70.js"
+    "static/css/main.0aa8bcc3.css",
+    "static/js/main.bdaf8ef6.js"
   ]
 }
