@@ -2,20 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button, Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap';
 import { db } from '../firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, setPersistence, browserSessionPersistence } from 'firebase/auth';
 
 import profile from '../images/profile.jpg'
 import './MyAccount.scss'
 
-let uid;
 const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-  }
-})
-
-const docRef = doc(db, 'userInfo', uid);
 
 export function MyProfileNavbar() {
     return (
@@ -24,10 +16,10 @@ export function MyProfileNavbar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="flex-column me-auto w-100">
-              <Nav.Link href="/settings">Settings</Nav.Link>
-              <Nav.Link href="/my-diet">My Diet</Nav.Link>
-              <Nav.Link href="/plan">Plan</Nav.Link>
-              <Nav.Link href="/help">Help</Nav.Link>
+              <Nav.Link href="my-account/settings">Settings</Nav.Link>
+              <Nav.Link href="my-account/my-diet">My Diet</Nav.Link>
+              <Nav.Link href="my-account/plan">Plan</Nav.Link>
+              <Nav.Link href="my-account/help">Help</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -36,6 +28,7 @@ export function MyProfileNavbar() {
 }
 
 export function MyProfileContent() {
+  const [ docRef, setDocRef ] = useState(null);
   const [ userInfo, setUserInfo ] = useState({
     firstName: '',
     lastName: '',
@@ -49,12 +42,12 @@ export function MyProfileContent() {
     dishUpdate: '',
   })
 
-
   const getData = async () => {
-    const data = await getDoc(docRef);
-    console.log(data.exists())
-    if (data.exists()) {
-      setUserInfo({ ...data.data(), id: data.id });
+    if (docRef) {
+      const data = await getDoc(docRef);
+      if (data.exists()) {
+        setUserInfo({ ...data.data(), id: data.id });
+      }
     }
   }
   
@@ -73,8 +66,19 @@ export function MyProfileContent() {
   };
 
   useEffect(() => {
-    getData();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const curruid = user.uid;
+        setDocRef(doc(db, 'userInfo', curruid));
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    getData();
+  }, [docRef])
 
   const generalInfo = [
     { label: "FIRST NAME", name: "firstName", value: userInfo.firstName },
