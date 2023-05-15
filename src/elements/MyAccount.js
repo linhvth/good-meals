@@ -2,11 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Button, Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap';
 import { db } from '../firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 import profile from '../images/profile.jpg'
 import './MyAccount.scss'
 
-const docRef = doc(db, 'userInfo', 'Q2OheTK1sVOkOeKxoElwNnMJoa02');
+let uid;
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+  }
+})
+
+const docRef = doc(db, 'userInfo', uid);
 
 export function MyProfileNavbar() {
     return (
@@ -39,6 +48,7 @@ export function MyProfileContent() {
     remindMeal: '',
     dishUpdate: '',
   })
+
 
   const getData = async () => {
     const data = await getDoc(docRef);
