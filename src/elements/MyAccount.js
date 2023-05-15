@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap';
-import { app, db } from '../firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { Button, Container, Nav, Navbar, Row, Col, Form } from 'react-bootstrap';
+import { db } from '../firebase';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 
 import profile from '../images/profile.jpg'
 import './MyAccount.scss'
 
-const docRef = doc(db, 'userInfo', 'Q20heTK1sV0k0eKxoElwNnMJoa02');
-console.log(docRef)
-
-const docSnap = await getDoc(docRef);
-
-if (docSnap.exists()) {
-  console.log("Document data:", docSnap.data());
-} else {
-  // docSnap.data() will be undefined in this case
-  console.log("No such document!");
-}
+const docRef = doc(db, 'userInfo', 'Q2OheTK1sVOkOeKxoElwNnMJoa02');
 
 export function MyProfileNavbar() {
     return (
@@ -37,83 +27,125 @@ export function MyProfileNavbar() {
 }
 
 export function MyProfileContent() {
+  const [ userInfo, setUserInfo ] = useState({
+    firstName: '',
+    lastName: '',
+    userEmail: '',
+    phoneNumber: '',
+    birthDate: '',
+    location: '',
+    userName: '',
+    password: '',
+    remindMeal: '',
+    dishUpdate: '',
+  })
+
+  const getData = async () => {
+    const data = await getDoc(docRef);
+    console.log(data.exists())
+    if (data.exists()) {
+      setUserInfo({ ...data.data(), id: data.id });
+    }
+  }
+  
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserInfo((prevUserInfo) => ({
+      ...prevUserInfo,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Update the userInfo document in the database
+    await updateDoc(docRef, userInfo);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const generalInfo = [
+    { label: "FIRST NAME", name: "firstName", value: userInfo.firstName },
+    { label: "LAST NAME", name: "lastName", value: userInfo.lastName },
+    { label: "EMAIL ADDRESS", name: "userEmail", value: userInfo.userEmail },
+    { label: "PHONE NUMBER", name: "phoneNumber", value: userInfo.phoneNumber },
+    { label: "BIRTHDATE", name: "birthDate", value: userInfo.birthDate },
+    { label: "LOCATION", name: "location", value: userInfo.location }
+  ];
+
+  const accountSetting = [
+    { label: "USER NAME", name: "userName", value: userInfo.userName },
+    { label: "PASSWORD", name: "password", value: userInfo.password },
+    { label: "Remind me on daily meal", name: "remindMeal", value: userInfo.remindMeal },
+    { label: "Send me updates on new dishes", name: "dishUpdate", value: userInfo.dishUpdate }
+  ];
+
   return (
     <Container>
-      <div id='profile-img'>
-        <img src={profile} alt='profile' className='w-100 h-100' />
+      <div id="profile-img">
+        <img src={profile} alt="profile" className="w-100 h-100" />
       </div>
 
-      <h2 className='section-head'> General Info </h2>
-      <Form.Group className='mb-3'>
-        <Row className = 'info-row'>
-          <Col>
-            <Form.Label>FIRST NAME</Form.Label>
-            <Form.Control type="text" value="Chi" readOnly/>
-          </Col>
-          <Col>
-            <Form.Label>LAST NAME</Form.Label>
-            <Form.Control type="text" value="Hoang" readOnly/>
-          </Col>
-        </Row>
-        <Row className='info-row'>
-          <Col>
-            <Form.Label>EMAIL ADDRESS</Form.Label>
-            <Form.Control type="text" value="chikim0101@gmail.com" readOnly/>
-          </Col>
-          <Col>
-            <Form.Label>PHONE NUMBER</Form.Label>
-            <Form.Control type="text" value="+84123456789" readOnly/>
-          </Col>
-        </Row>
-        <Row className='info-row'>
-          <Col>
-            <Form.Label>BIRTHDATE</Form.Label>
-            <Form.Control type="text" value="01/01/2002" readOnly/>
-          </Col>
-          <Col>
-            <Form.Label>LOCATION</Form.Label>
-            <Form.Control type="text" value="Thanh Hoa, Vietnam" readOnly/>
-          </Col>
-        </Row>
-      </Form.Group>
-      <h2 className='section-head'> Account Setting </h2>
-      <Form.Group className='mb-3'>
-        <Row className = 'info-row'>
-          <Col>
-            <Form.Label>USERNAME</Form.Label>
-            <Form.Control type="text" value="callmechihoang" readOnly/>
-          </Col>
-          <Col>
-            <Form.Label>PASSWORD</Form.Label>
-            <Form.Control type="text" value="********" readOnly/>
-          </Col>
-        </Row>
-        <Row className = 'info-row'>
-          <Col>
-            <Form.Label>Remind me on daily meal</Form.Label>
-            <Form.Control type="text" value="Yes" readOnly/>
-          </Col>
-        </Row>
-        <Row className = 'info-row'>
-          <Col>
-            <Form.Label>Send me updates on new dishes</Form.Label>
-            <Form.Control type="text" value="Yes" readOnly/>
-          </Col>
-        </Row>
-      </Form.Group>
+      <h2 className="section-head">General Info</h2>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          {generalInfo.map((field) => (
+            <Row className="info-row" key={field.name}>
+              <Col>
+                <Form.Label>{field.label}</Form.Label>
+                <Form.Control
+                  type="text"
+                  name={field.name}
+                  value={field.value}
+                  onChange={handleInputChange}
+                />
+              </Col>
+            </Row>
+          ))}
+        </Form.Group>
+        <div className="d-flex justify-content-center">
+          <Button type="submit" variant="primary">
+            Save Changes
+          </Button>
+        </div>
+      </Form>
+
+      <h2 className="section-head">Account Setting</h2>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          {accountSetting.map((field) => (
+            <Row className="info-row" key={field.name}>
+              <Col>
+                <Form.Label>{field.label}</Form.Label>
+                <Form.Control
+                  type="text"
+                  name={field.name}
+                  value={field.value}
+                  onChange={handleInputChange}
+                />
+              </Col>
+            </Row>
+          ))}
+        </Form.Group>
+        <div className="d-flex justify-content-center">
+          <Button type="submit" variant="primary">
+            Save Changes
+          </Button>
+        </div>
+      </Form>
     </Container>
-  )
+  );
 }
 
 function MyAccount () {
-  const [data, setData] = useState(null);
-
     return (
       <Container className='py-5 my-3'>
         <Row>
           <Col md = {3}>
             <div className = 'new-title'>
-                  Hi KimChi1010!
+                  Good Morning!
             </div>
             <MyProfileNavbar/>
             </Col>
