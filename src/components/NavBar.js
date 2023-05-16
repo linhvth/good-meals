@@ -54,15 +54,15 @@ function NavBar() {
     }
   }
 
-  function setFixed () {
-    if (window.scrollY >= 100) {
-      setFix(true);
-    } else {
-      setFix(false);
-    }
-  }
+  // function setFixed () {
+  //   if (window.scrollY >= 100) {
+  //     setFix(true);
+  //   } else {
+  //     setFix(false);
+  //   }
+  // }
 
-  window.addEventListener("scroll", setFixed);
+  // window.addEventListener("scroll", setFixed);
 
   return (
     <Navbar collapseOnSelect expand="lg" className='py-2' sticky='top' id='navbar'>
