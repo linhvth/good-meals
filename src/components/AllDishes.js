@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Card, Container } from "react-bootstrap"
 import { db } from '../firebase';
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
-
+import Dish from '../elements/Dish'
 
 function AllDishes () {
     const [dishes, setDishes] = useState([])
@@ -15,14 +15,12 @@ function AllDishes () {
                 setDishes(dishData);
             });
     }, []);
-    // console.log(dishes)
 
     return (
         <Container className="py-5 my-3">
-            {dishes.map(dish => 
+            {dishes.map((dish) => 
                 <Container> 
-                    <p className="text-bold">{ dish.Meal }</p>
-                    <p>{ dish.Description }</p>
+                    <Dish title= { dish.Meal } category={ dish.Category } image={ dish.Image }/>
                 </Container>
             )}
         </Container>
