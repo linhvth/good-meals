@@ -9,6 +9,7 @@ import chicken from '../images/chicken.jpg'
 const OurDishes = () => {
     const navigation = useNavigate();
     const navigateTo = () => navigation('../all-dishes');
+    const dummy = [ "Main course", "Lunch"]
 
     return (
         <Container className='py-5 my-3'>
@@ -24,13 +25,13 @@ const OurDishes = () => {
         </div>
         <Row>
             <Col>
-            <Dish title= "Healthy chicken katsu curry" category="Main course" image={ chicken }/>
+            <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
             </Col>
             <Col>
-            <Dish title= "Healthy chicken katsu curry" category="Main course" image={ chicken }/>
+            <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
             </Col>
             <Col>
-            <Dish title= "Healthy chicken katsu curry" category="Main course" image={ chicken }/>
+            <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
             </Col>
         </Row>
         <div className='division'>
