@@ -180,7 +180,7 @@ function SignUp() {
                 
 
                 <p className="text-center">
-                    Already have an account? <Link to='/log-in' className="text-decoration-none">Sign in.</Link>
+                    Already have an account? <Link to='/good-meals/log-in' className="text-decoration-none">Sign in.</Link>
                 </p>
 
             </Form>

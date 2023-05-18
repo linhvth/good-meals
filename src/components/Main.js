@@ -17,16 +17,16 @@ import MyAccount from '../elements/MyAccount';
 const Main = () => {
     return (
         <Routes className='main container'>
-            <Route path='/' Component={ Home } />
-            <Route path='/plans' Component={ Plans } />
-            <Route path='/all-dishes' Component={ AllDishes }/>
-            <Route path='/articles' Component={ Articles } />
-            <Route path='/plan' Component={ Plan } />
-            <Route path='/about-us' Component={ AboutUs } />
-            <Route path='/help' Component={ Help } />
-            <Route path='/log-in' Component={ LogIn } />
-            <Route path='/sign-up' Component={ SignUp } />
-            <Route path='/my-account' Component = { MyAccount } />
+            <Route path='/good-meals' Component={ Home } />
+            <Route path='/good-meals/plans' Component={ Plans } />
+            <Route path='/good-meals/all-dishes' Component={ AllDishes }/>
+            <Route path='/good-meals/articles' Component={ Articles } />
+            <Route path='/good-meals/plan' Component={ Plan } />
+            <Route path='/good-meals/about-us' Component={ AboutUs } />
+            <Route path='/good-meals/help' Component={ Help } />
+            <Route path='/good-meals/log-in' Component={ LogIn } />
+            <Route path='/good-meals/sign-up' Component={ SignUp } />
+            <Route path='/good-meals/my-account' Component = { MyAccount } />
         </Routes>
     )
 }
