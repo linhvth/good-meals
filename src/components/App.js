@@ -14,13 +14,13 @@ import { AuthProvider } from "../contexts/AuthProvider";
 function App() {
   return (
     <AuthProvider>
-    <BrowserRouter>
+    <HashRouter>
       <Fragment>
         <NavBar />
         <Main /> {/* to add more Routes, go to Main.js */}
         <Footer />
       </Fragment>
-    </BrowserRouter>
+    </HashRouter>
     </AuthProvider>
   );
 }

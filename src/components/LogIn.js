@@ -20,7 +20,7 @@ function LogIn() {
 
     let navigate = useNavigate();
     const routeSignUp = () => {
-        let path = '/good-meals/sign-up';
+        let path = '/sign-up';
         navigate(path);
     }
 
