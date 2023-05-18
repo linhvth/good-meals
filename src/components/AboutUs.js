@@ -4,6 +4,7 @@ import './AboutUs.scss';
 import Timeline from "../elements/Timeline";
 import OurValues from "../elements/OurValues";
 import hero from '../images/aboutus_hero.jpg';
+import PreLoader from "../elements/PreLoader";
 
 const Hero = () => {
     return (
@@ -19,13 +20,16 @@ const Hero = () => {
 }
 function AboutUs() {
     return (
+        <div>
+            <PreLoader />
             <div>
                 <Hero />
                 <Container>
                         <Timeline />
                         <OurValues />
                 </Container>
-            </div>               
+            </div>  
+        </div>             
     )
 }
 

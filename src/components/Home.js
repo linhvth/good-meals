@@ -9,6 +9,7 @@ import { useAuth } from "../contexts/AuthProvider"
 import OurPlans from "../elements/OurPlans";
 import OurDishes from "../elements/OurDish";
 import Articles from "../elements/Articles";
+import PreLoader from '../elements/PreLoader'
 
 import background from '../images/home_background.jpg';
 
@@ -38,6 +39,7 @@ function Home() {
 
     return (
         <>
+        <PreLoader />
             { currUser 
                 ?
                     <Slider/>

@@ -27,20 +27,20 @@ const OurPlans = () => {
         </div>
         <Row>
             <Col>
-            <Plan title= "Jumpstart" description="Not sure where to start? 
-            Use this plan to begin your journey of leading a healthier lifestyle. 
-            Comes with featured articles, monthly planning meals." image={ jumpStart }/>
+                <Plan title= "Jumpstart" description="Not sure where to start? 
+                Use this plan to begin your journey of leading a healthier lifestyle. 
+                Comes with featured articles, monthly planning meals." image={ jumpStart }/>
             </Col>
             <Col>
-            <Plan title= "Sprint" description="Build up your routine and diet, 
-            never go back to an your old self again! Comes with featured articles, 
-            meals planning restricted to workout routine, tickets to health conferences." image={ sprint }/>
+                <Plan title= "Sprint" description="Build up your routine and diet, 
+                never go back to an your old self again! Comes with featured articles, 
+                meals planning restricted to workout routine, tickets to health conferences." image={ sprint }/>
             </Col>
             <Col>
-            <Plan title= "Triathlon" description="Looking to incorporate your 
-            diet into your life forever? This plan incorporates a variety of healthy 
-            and delicious meals that are tailored to support your fitness and nutrition goals. 
-            Comes with personalized nutritionists consultancy." image={ finish }/>
+                <Plan title= "Triathlon" description="Looking to incorporate your 
+                diet into your life forever? This plan incorporates a variety of healthy 
+                and delicious meals that are tailored to support your fitness and nutrition goals. 
+                Comes with personalized nutritionists consultancy." image={ finish }/>
             </Col>
         </Row>
         <div className='division'>

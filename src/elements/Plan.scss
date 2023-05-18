@@ -1,16 +1,21 @@
 @import '../styles/bootstrap-override.scss';
 
 .plan-container {
-    margin: 0px 0px;
-    padding: 0px 0px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+.plan-container:hover{
+    transform: scale(1.05);
 }
 
 .plan-card {
     position: relative;
-    width: 320px;
-    height: 480px;
+    max-width: 300px;
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
     border-width: 5px;
     border-color: #1D828E;
     border-style: solid;
@@ -24,7 +29,7 @@
     opacity: 0.9;
     object-fit: cover;
     width: 100%;
-    height: 420px;  
+    height: 100%;  
     align-items: center;
     /* Inside auto layout */
     flex: none;
