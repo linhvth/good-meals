@@ -29,7 +29,8 @@ function AllDishes () {
 
     return (
         <div>
-        <PreLoader />
+        { loading ? (<PreLoader />)
+        : (
         <Container className="py-5 my-3">
             <Row> 
                 <Container className="col-3">
@@ -49,6 +50,7 @@ function AllDishes () {
                 </Row>
             </Row>
         </Container>
+        )}
         </div>
     )
 }

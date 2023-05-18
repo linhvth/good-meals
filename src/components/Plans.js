@@ -5,12 +5,10 @@ import './Plans.scss';
 import jumpStart from '../images/planStart.jpg';
 import sprint from '../images/planSprint.jpg';
 import finish from '../images/planFinish.jpg';
-import PreLoader from "../elements/PreLoader"
 
 const Plans = () => {
     return (
         <div>
-            <PreLoader />
             <Container className="py-5 my-3">
             <Row>
                 <Col xs={12} sm ={12} md={4}>

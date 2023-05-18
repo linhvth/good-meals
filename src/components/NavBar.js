@@ -54,36 +54,26 @@ function NavBar() {
     }
   }
 
-  // function setFixed () {
-  //   if (window.scrollY >= 100) {
-  //     setFix(true);
-  //   } else {
-  //     setFix(false);
-  //   }
-  // }
-
-  // window.addEventListener("scroll", setFixed);
-
   return (
     <Navbar collapseOnSelect expand="lg" className='py-2' sticky='top' id='navbar'>
       {/* Navigation section */}
       <Container id='navbar'>
-        <Navbar.Brand href="/" className='fw-bold'>Good Meals</Navbar.Brand>
+        <Navbar.Brand href="#/" className='fw-bold'>Good Meals</Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className='container-fluid'>
-                <Nav.Link href="/all-dishes">All Dishes</Nav.Link>
-                <Nav.Link href="/plans">Plans</Nav.Link>
-                <Nav.Link href='/articles'>Articles</Nav.Link>
-                <Nav.Link className='ms-auto' href="/good-meals/about-us">About Us</Nav.Link>
-                <Nav.Link href="/help">Help</Nav.Link>
+                <Nav.Link href="#/all-dishes">All Dishes</Nav.Link>
+                <Nav.Link href="#/plans">Plans</Nav.Link>
+                <Nav.Link href='#/articles'>Articles</Nav.Link>
+                <Nav.Link className='ms-auto' href="#/about-us">About Us</Nav.Link>
+                <Nav.Link href="#/help">Help</Nav.Link>
                 { currUser ?
                   <>
                     <NavDropdown title="My Account" id="nav-dropdown">
                       <NavDropdown.Item>
-                        <NavLink className='text-black' href='/my-account' onClick={ handleAccount }>My Profile</NavLink>
+                        <NavLink className='text-black' onClick={ handleAccount }>My Profile</NavLink>
                       </NavDropdown.Item>
                       
                       <NavDropdown.Divider />
@@ -94,8 +84,8 @@ function NavBar() {
                   </>
                   :
                   <>
-                    <Nav.Link href="/log-in">Log In</Nav.Link>
-                    <Nav.Link href="/sign-up">Sign Up</Nav.Link>
+                    <Nav.Link href="#/log-in">Log In</Nav.Link>
+                    <Nav.Link href="#/sign-up">Sign Up</Nav.Link>
                   </>
                 }
           </Nav>

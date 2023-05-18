@@ -18,10 +18,10 @@ const Hero = () => {
         </Card>
     )
 }
+
 function AboutUs() {
     return (
         <div>
-            <PreLoader />
             <div>
                 <Hero />
                 <Container>

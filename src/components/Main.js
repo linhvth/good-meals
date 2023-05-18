@@ -18,6 +18,7 @@ const Main = () => {
     return (
         <Routes className='main container'>
             <Route path='/' Component={ Home } />
+            <Route path='#' Component={ Home } />
             <Route path='/plans' Component={ Plans } />
             <Route path='/all-dishes' Component={ AllDishes }/>
             <Route path='/articles' Component={ Articles } />
