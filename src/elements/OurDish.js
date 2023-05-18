@@ -23,25 +23,25 @@ const OurDishes = () => {
             popular healthy dishes today and discover how delicious eating well can be!
             </p>
         </div>
-        <Row>
+        <Row className='d-flex flex-row'>
             <Col>
-            <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
+                <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
             </Col>
             <Col>
-            <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
+                <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
             </Col>
             <Col>
-            <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
+                <Dish title= "Healthy chicken katsu curry" category={ dummy } image={ chicken }/>
             </Col>
         </Row>
-        <div className='division'>
+        <Container className='division pt-3'>
             <strong> Or </strong>
             <div>
             <button className='still' onClick = {navigateTo}>
                 Browse More Dishes            
             </button>
             </div>
-        </div>
+        </Container>
         </Container>
     )
 }

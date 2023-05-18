@@ -68,17 +68,17 @@ function NavBar() {
     <Navbar collapseOnSelect expand="lg" className='py-2' sticky='top' id='navbar'>
       {/* Navigation section */}
       <Container id='navbar'>
-        <Navbar.Brand href="#/" className='fw-bold'>Good Meals</Navbar.Brand>
+        <Navbar.Brand href="/" className='fw-bold'>Good Meals</Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className='container-fluid'>
-                <Nav.Link href="#/all-dishes">All Dishes</Nav.Link>
-                <Nav.Link href="#/plans">Plans</Nav.Link>
-                <Nav.Link href='#/articles'>Articles</Nav.Link>
-                <Nav.Link className='ms-auto' href="#/about-us">About Us</Nav.Link>
-                <Nav.Link href="#/help">Help</Nav.Link>
+                <Nav.Link href="/all-dishes">All Dishes</Nav.Link>
+                <Nav.Link href="/plans">Plans</Nav.Link>
+                <Nav.Link href='/articles'>Articles</Nav.Link>
+                <Nav.Link className='ms-auto' href="/about-us">About Us</Nav.Link>
+                <Nav.Link href="/help">Help</Nav.Link>
                 { currUser ?
                   <>
                     <NavDropdown title="My Account" id="nav-dropdown">
@@ -94,8 +94,8 @@ function NavBar() {
                   </>
                   :
                   <>
-                    <Nav.Link href="#/log-in">Log In</Nav.Link>
-                    <Nav.Link href="#/sign-up">Sign Up</Nav.Link>
+                    <Nav.Link href="/log-in">Log In</Nav.Link>
+                    <Nav.Link href="/sign-up">Sign Up</Nav.Link>
                   </>
                 }
           </Nav>
