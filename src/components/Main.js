@@ -27,7 +27,7 @@ const Main = () => {
             <Route path='/help' Component={ Help } />
             <Route path='/log-in' Component={ LogIn } />
             <Route path='/sign-up' Component={ SignUp } />
-            <Route path='/my-account' Component = { MyAccount } />
+            <Route path='/my-account/*' Component = { MyAccount } />
         </Routes>
     )
 }
