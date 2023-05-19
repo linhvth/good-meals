@@ -41,15 +41,17 @@ const Search = () => {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 100);
     }, []);
+
+    const numDishes = Object.keys(data).length;
 
     return (
         <div>
         { loading ? (<PreLoader />)
         : (
         <Container className="py-5 my-3">
-            { (Object.keys(data).length === 0) ? (
+            { (numDishes === 0) ? (
                 <p>No dish is found with: "{thisQuery.get('dish')}"</p>
             ) : (
             <Row> 
@@ -58,6 +60,10 @@ const Search = () => {
                 </Container>
 
                 <Row className="col-9 d-flex flex-row justify-content-start" id='list-dishes'>
+                    <p>We found {numDishes} dishes for the keyword <i>
+                        "{thisQuery.get('dish')}"
+                        </i>.
+                    </p>
                     {data.map((dish) => 
                         <Col className='col-lg-4'>
                             <Dish 

@@ -13,7 +13,7 @@ import SignUp from './SignUp';
 
 import Plan from '../elements/Plan';
 import MyAccount from '../elements/MyAccount';
-import Search from "../elements/Search";
+import Search from "./Search";
 
 const Main = () => {
     return (
