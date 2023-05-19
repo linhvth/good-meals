@@ -54,16 +54,6 @@ function NavBar() {
     }
   }
 
-  function setFixed () {
-    if (window.scrollY >= 100) {
-      setFix(true);
-    } else {
-      setFix(false);
-    }
-  }
-
-  window.addEventListener("scroll", setFixed);
-
   return (
     <Navbar collapseOnSelect expand="lg" className='py-2' sticky='top' id='navbar'>
       {/* Navigation section */}
@@ -83,7 +73,7 @@ function NavBar() {
                   <>
                     <NavDropdown title="My Account" id="nav-dropdown">
                       <NavDropdown.Item>
-                        <NavLink className='text-black' href='/my-account#' onClick={ handleAccount }>My Profile</NavLink>
+                        <NavLink className='text-black' onClick={ handleAccount }>My Profile</NavLink>
                       </NavDropdown.Item>
                       
                       <NavDropdown.Divider />

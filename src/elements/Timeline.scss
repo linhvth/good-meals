@@ -28,10 +28,16 @@
     border-right: 1px dashed black;
     top: 0;
 }
-@media (min-width: 1140px) {
+.description-timeline {
+    font-size: 16px;
+}
+@media (min-width: 1040px) {
     .timeline-item {  
         display: inline-block;
         width: 22%;
-        padding-top: 45px;
+        padding-top: calc(36px + (45 - 36)  * ((100vw - 360px) / (1440 - 360)));
+    }
+    .timeline-year {
+        font-size: calc(1.25rem * ((100vw - 360px) / (1440 - 360)));
     }
   }

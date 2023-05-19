@@ -1,10 +1,13 @@
 @import '../styles/bootstrap-override.scss';
 
 .dish-container {
-    margin: 12px 12px;
-    padding: 12px 12px;
-    width: 320px;
-    height: 400px;
+    width: 250px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.dish-container:hover{
+    transform: scale(1.05);
 }
 
 .col {
@@ -13,8 +16,10 @@
 
 .dish-card {
     position: relative;
-    width: 320px;
-    height: 320px;
+    max-width: 250px;
+    max-height: 250px;
+    width: 100%;
+    height: 100%;
     border-width: 5px;
     border-color: #FEAC5D;
     border-style: solid;
@@ -36,24 +41,28 @@
 
 .dish-body {
     position: relative;
-    width: 320px;
-    height: 40px;
+    width: 100%;
+    // height: 40px;
+    text-align: center;
+    overflow-wrap: break-word;
 }
 
 .dish-title{
-    line-height: 0px;
+    // line-height: 0px;
     font-weight: bolder;
     text-align: center;
     color: #1D828E;
     object-fit: cover;  
-    margin: 16px 0px 16px;
+    // margin: 16px 0px 16px;
+    overflow-wrap: break-word;
 }
 
 .dish-title-text{
     font-family: 'Poppins';
-    font-size: 12px;
+    // font-size: 14px;
     font-weight: bolder;
-    margin: 16px 0px 16px;
+    // margin: 16px 0px 16px;
+    overflow-wrap: break-word;
 }
 
 .dish-cat {
@@ -61,10 +70,15 @@
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 0px;
+    // line-height: 0px;
     align-items: center;
     text-align: center;
     /* Bold */
     color: #1D828E;
-    margin: 16px 0px 16px;
+    // margin: 16px 0px 16px;
+    overflow-wrap: break-word !important;
+}
+
+.field-br {
+  word-break: break-all; 
 }

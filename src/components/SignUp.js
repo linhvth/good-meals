@@ -94,14 +94,13 @@ function SignUp() {
     }
 
     return (
-        <Container style={{ width: '360px'}} className="pb-5 mt-5 d-flex flex-column">
+        <Container style={{ width: '360px'}} className="pb-5 mt-5 d-flex flex-column text-center">
             <h2 className="text-bold mb-4 mt-2 text-center">Sign Up</h2>
  
             {error && <Alert variant="danger">{ error }</Alert>}
 
             <Form onSubmit={ handleSubmit } id='signUpForm'> 
                 <Form.Group className='mb-4'>
-                    <Form.Label>First Name</Form.Label>
                     <Form.Control  
                         placeholder='First Name' 
                         type="firstName" 
@@ -117,7 +116,6 @@ function SignUp() {
                     
                     
                 <Form.Group className='mb-4'>
-                    <Form.Label>Last Name</Form.Label>
                     <Form.Control  
                         placeholder='Last Name' 
                         type="lastName" 
@@ -133,7 +131,6 @@ function SignUp() {
 
 
                 <Form.Group className='mb-4'>
-                    <Form.Label>Email Address</Form.Label>
                     <Form.Control  
                         placeholder='Email Address' 
                         type="userEmail" 
@@ -148,7 +145,6 @@ function SignUp() {
                 </Form.Group>
 
                 <Form.Group className="mb-4">
-                    <Form.Label>Password</Form.Label>
                     <Form.Control 
                         type='password' 
                         placeholder='Password'
@@ -163,7 +159,6 @@ function SignUp() {
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Password Confirmation</Form.Label>
                     <Form.Control 
                         type='password' 
                         placeholder='Password Confirmation'

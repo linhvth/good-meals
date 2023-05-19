@@ -1,5 +1,5 @@
 import React from "react"
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, BrowserRouter } from 'react-router-dom';
 import { Fragment } from 'react';
 import NavBar from './NavBar'
 import Main from './Main'
