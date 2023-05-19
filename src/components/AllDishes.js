@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { Card, Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import { db } from '../firebase';
-import { collection, getDocs, onSnapshot, query, orderBy } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import Dish from '../elements/Dish'
 import PreLoader from "../elements/PreLoader";
 
@@ -25,6 +25,8 @@ function AllDishes () {
         }, 2000);
     }, []);
 
+    console.log(dishes)
+
     return (
         <div>
         { loading ? (<PreLoader />)
@@ -42,6 +44,7 @@ function AllDishes () {
                                 title= { dish.Meal } 
                                 category={ dish.Category } 
                                 image={ dish.Image }
+                                slug={ dish.unique_url }
                             />
                         </Col>
                     )}

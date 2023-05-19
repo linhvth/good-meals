@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { db } from '../firebase'
-import { collection, getDocs, onSnapshot, query, orderBy, where } from "firebase/firestore";
-import { snap } from "gsap";
+import { collection, onSnapshot, query, orderBy, where } from "firebase/firestore";
 
 import { Container, Row, Col } from "react-bootstrap"
 import Dish from '../elements/Dish'
@@ -70,6 +69,7 @@ const Search = () => {
                                 title= { dish.Meal } 
                                 category={ dish.Category } 
                                 image={ dish.Image }
+                                slug={ dish.unique_url }
                             />
                         </Col>
                     )}

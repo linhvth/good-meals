@@ -3,12 +3,14 @@ import { Container } from "react-bootstrap";
 
 import './Dish.scss';
 import dummy from '../images/chicken.jpg'
+import { Link } from "react-router-dom";
 
-const Plan = ({ title, category, image }) => {
+const Dish = ({ title, category, image, slug }) => {
     const category_ = category.join(', ')
 
     return (
         <div className="pt-3 pb-5 d-flex justify-content-center">
+        <Link className="text-decoration-none" to={ slug } >
         <div className="dish-container">
             <div className = "dish-card">
                 <img className = "dish-img" src={ image } alt={ title } id="image"/>
@@ -20,8 +22,9 @@ const Plan = ({ title, category, image }) => {
                 <p className = "dish-cat text-wrap">{ category_ }</p>
             </div>
         </div>
+        </Link>
         </div>
     )
 }
 
-export default Plan
+export default Dish
