@@ -15,27 +15,40 @@ import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import { NavDropdown, NavLink } from 'react-bootstrap';
 
 const SearchBox=() => {
+  const [ search, setSearch ] = useState('');
+  const toSearch = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    toSearch(`/search?dish=${ search }`);
+    setSearch('');
+  }
+
   return (
-    <Container className='mx-auto'>
-      <InputGroup className="d-flex mt-2 mb-3 mx-auto">
-        <Form.Control
-            type="search"
-            placeholder="Search any dishes (e.g. potato, chicken, etc.)"
-            className="search-box"
-            aria-label="Search"
-        />
-        <Button variant='outline-light' id='search-button'>
+    <div className='w-100'>
+      <Form.Group className="w-100 d-flex justify-content-center mt-2 mb-3 mx-auto" 
+                  onSubmit={ handleSearch }>
+        <Form className='w-100'>
+          <Form.Control
+              type="search"
+              placeholder="Search any dishes (e.g. potato, chicken, etc.)"
+              className="search-box"
+              aria-label="Search"
+              onChange={(e) => setSearch(e.target.value) }
+              value={ search }
+          />
+        </Form>
+        <Button variant='dark' id='search-button' type='submit' onClick={ handleSearch}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </Button>
-      </InputGroup>
-    </Container>
+      </Form.Group>
+    </div>
   )
 }
 
 function NavBar() {
   const { currUser, logout } = useAuth();
   const [error, setError] = useState('');
-  const [ fix, setFix ] = useState(false);
   const toLanding = useNavigate();
   const toAccount = useNavigate();
 
@@ -94,7 +107,9 @@ function NavBar() {
       </Container>
 
       {/* Search box */}
-      { fix ? <div /> : <SearchBox /> }
+      <Container className='w-100 d-flex flex-column justify-content-center my-auto'>
+        <SearchBox /> 
+      </Container>
     </Navbar>
   );
 }

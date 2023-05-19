@@ -13,6 +13,7 @@ import SignUp from './SignUp';
 
 import Plan from '../elements/Plan';
 import MyAccount from '../elements/MyAccount';
+import Search from "../elements/Search";
 
 const Main = () => {
     return (
@@ -28,6 +29,7 @@ const Main = () => {
             <Route path='/log-in' Component={ LogIn } />
             <Route path='/sign-up' Component={ SignUp } />
             <Route path='/my-account' Component = { MyAccount } />
+            <Route path='/search' Component={ Search } />
         </Routes>
     )
 }
