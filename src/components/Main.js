@@ -29,7 +29,7 @@ const Main = () => {
             <Route path='/help' Component={ Help } />
             <Route path='/log-in' Component={ LogIn } />
             <Route path='/sign-up' Component={ SignUp } />
-            <Route path='/my-account' Component = { MyAccount } />
+            <Route path='/my-account/*' Component = { MyAccount } />
             <Route path='/search' Component={ Search } />
             <Route path='/all-dishes/:slug' Component={ Recipe } />
             <Route path='/search/:slug' Component={ Recipe } />
