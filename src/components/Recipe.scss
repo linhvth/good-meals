@@ -1,0 +1,11 @@
+@import '../styles/bootstrap-override.scss';
+
+#recipe-cover.cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100% !important;
+    object-fit: cover;
+    width: 100%;
+    max-height: 300px;
+}
