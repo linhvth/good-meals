@@ -11,10 +11,10 @@ export function PageToggle() {
   return (
     <Routes>
       <Route path="/">
-        <Route index element={ <Settings/> } />
-        <Route path="my-diet" element={ <MyDiet/> } />
-        <Route path="my-plan" element={ <MyPlan/> } />
-        <Route path="bookmarks" element={ <Bookmarks/> } />
+        <Route index element={ <Settings/> }/>
+        <Route path="my-diet" element={ <MyDiet/> }/>
+        <Route path="my-plan" element={ <MyPlan/> }/>
+        <Route path="bookmarks" element={ <Bookmarks/> }/>
       </Route>
     </Routes>
   )
