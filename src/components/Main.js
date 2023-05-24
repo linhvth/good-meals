@@ -10,7 +10,6 @@ import AboutUs from './AboutUs';
 import Help from './Help';
 import LogIn from './LogIn'
 import SignUp from './SignUp';
-
 import Plan from '../elements/Plan';
 import MyAccount from '../elements/MyAccount';
 import Search from "./Search";

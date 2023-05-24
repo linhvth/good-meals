@@ -140,7 +140,6 @@ export function DietContent() {
 }
 
 const MyDiet = () => {
-    console.log('MyDiet component')
     return (
         <DietContent/>
     )
