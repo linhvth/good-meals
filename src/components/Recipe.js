@@ -29,16 +29,21 @@ const PageRecipe = ({ dish, slug }) => {
     }, [auth]);
     
     async function isDishInUser() {
+        if (!userId) return false;
         const userInfoRef = doc(db, "userInfo", userId);
         const userInfoDoc = await getDoc(userInfoRef);
         const userInfo = userInfoDoc.data();
 
         // get the dishes
         const savedDishes = userInfo.savedDish;
-        return (savedDishes.includes(slug))
+        return savedDishes ? savedDishes.includes(slug) : false;
     }
     
-    const [ isClicked, setIsClicked ] = useState(isDishInUser());
+    const [ isClicked, setIsClicked ] = useState(false);
+    useEffect(() => {
+        isDishInUser().then(result => setIsClicked(result));
+    }, [userId]);
+
     const handleBookmarkClick = async () => {
         if (userId) {
             const userInfoRef = doc(db, 'userInfo', userId)
@@ -55,7 +60,7 @@ const PageRecipe = ({ dish, slug }) => {
             }
         }
     }
-
+    console.log(isClicked)
     return (
         <div className='w-100'>
             <Card className="home-background">
