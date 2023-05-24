@@ -1,7 +1,3 @@
-// 1. Load the current dishes from userInfo array
-// 2. The dishes must contain a unique url, which our array already stored
-// 3. Using this unique url, somehow retrieve back the data for that dish
-// 4. Using the preloaded Dish component, upload the dish information
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { db } from '../../firebase';
@@ -20,7 +16,7 @@ async function getUserFavoriteDishes(db, userId) {
     // Get the slugs of the user's favorite dishes
     const favoriteDishSlugs = userInfo.savedDish;
   
-    // Query the dishesInfo collection to retrieve information about the user's favorite dishes
+    // Query the allDishes collection to retrieve information about the user's favorite dishes
     const dishesInfoRef = collection(db, "allDishes");
     const q = query(dishesInfoRef, where("unique_url", "in", favoriteDishSlugs));
     const querySnapshot = await getDocs(q);

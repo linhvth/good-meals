@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { db } from '../firebase'
-import { collection, onSnapshot, query, orderBy, where, arrayUnion, arrayRemove, doc, updateDoc } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy, where, arrayUnion, arrayRemove, doc, getDoc, updateDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Container, Card } from "react-bootstrap"
 import './Recipe.scss'
@@ -27,12 +27,22 @@ const PageRecipe = ({ dish, slug }) => {
     
         return () => unsubscribe();
     }, [auth]);
+    
+    async function isDishInUser() {
+        const userInfoRef = doc(db, "userInfo", userId);
+        const userInfoDoc = await getDoc(userInfoRef);
+        const userInfo = userInfoDoc.data();
 
-    const [ isClicked, setIsClicked ] = useState(false);
+        // get the dishes
+        const savedDishes = userInfo.savedDish;
+        return (savedDishes.includes(slug))
+    }
+    
+    const [ isClicked, setIsClicked ] = useState(isDishInUser());
     const handleBookmarkClick = async () => {
         if (userId) {
             const userInfoRef = doc(db, 'userInfo', userId)
-            
+        
             setIsClicked(!isClicked);
             if (isClicked) {
                 await updateDoc(userInfoRef, {
