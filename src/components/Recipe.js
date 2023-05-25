@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { db } from '../firebase'
-import { collection, onSnapshot, query, orderBy, where, arrayUnion, arrayRemove, doc, updateDoc } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy, where, arrayUnion, arrayRemove, doc, getDoc, updateDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Container, Card } from "react-bootstrap"
 import './Recipe.scss'
@@ -27,12 +27,27 @@ const PageRecipe = ({ dish, slug }) => {
     
         return () => unsubscribe();
     }, [auth]);
+    
+    async function isDishInUser() {
+        if (!userId) return false;
+        const userInfoRef = doc(db, "userInfo", userId);
+        const userInfoDoc = await getDoc(userInfoRef);
+        const userInfo = userInfoDoc.data();
 
+        // get the dishes
+        const savedDishes = userInfo.savedDish;
+        return savedDishes ? savedDishes.includes(slug) : false;
+    }
+    
     const [ isClicked, setIsClicked ] = useState(false);
+    useEffect(() => {
+        isDishInUser().then(result => setIsClicked(result));
+    }, [userId]);
+
     const handleBookmarkClick = async () => {
         if (userId) {
             const userInfoRef = doc(db, 'userInfo', userId)
-            
+        
             setIsClicked(!isClicked);
             if (isClicked) {
                 await updateDoc(userInfoRef, {
@@ -45,7 +60,7 @@ const PageRecipe = ({ dish, slug }) => {
             }
         }
     }
-
+    console.log(isClicked)
     return (
         <div className='w-100'>
             <Card className="home-background">

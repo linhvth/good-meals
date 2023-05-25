@@ -12,7 +12,6 @@ function Sidebar() {
             <Nav className="flex-column me-auto w-100">
               <Nav.Link onClick={() => navigate("/my-account")}>Settings</Nav.Link>
               <Nav.Link onClick={() => navigate("/my-account/my-diet")}>My Diet</Nav.Link>
-              <Nav.Link onClick={() => navigate("/my-account/my-plan")}>My Plan</Nav.Link>
               <Nav.Link onClick={() => navigate("/my-account/bookmarks")}>Bookmarks</Nav.Link>
             </Nav>
           </Navbar.Collapse>
